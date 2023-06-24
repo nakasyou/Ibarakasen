@@ -1,4 +1,4 @@
-import core.suggest import Suggest
+from core.suggest import Suggest
 import argparse
 
 # ArgParse
