@@ -17,6 +17,9 @@ async def main():
     suggest = Suggest(args.words)
 
     index = 0
+    def end():
+        print("Ended")
+        print(f"Tryed of {index}")
     try:
         while True:
             await suggest.pollution()
@@ -29,9 +32,9 @@ async def main():
                 # 有限
                 if index == args.number:
                     break
+        end()
     except KeyboardInterrupt:
-        print("Ended")
-        print(f"Tryed of {index}")
+        end()
 
 
 asyncio.run(main())
