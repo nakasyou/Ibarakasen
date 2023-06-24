@@ -23,7 +23,7 @@ async def main():
 
         ratio = math.floor(index/args.number*10000)/100 if args.number!=0 else "--"
 
-        print(f"{index} / {args.number} ({ratio})")
+        print(f"{index} / {args.number} ({ratio}%)")
         if args.number != 0:
             # 有限
             if index == args.number:
