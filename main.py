@@ -9,5 +9,6 @@ parser.add_argument("words", nargs="*", type=str, help="ターゲットのワー
 args = parser.parse_args()
 
 # System
-#suggest = Suggest(args.words)
-print(args.words)
+suggest = Suggest(args.words)
+
+suggest.pollution()
