@@ -35,6 +35,8 @@ async def main():
 
 try:
     asyncio.run(main())
+    print("Ended")
+    print(f"Tryed of {index}")
 except KeyboardInterrupt:
     print("Ended")
     print(f"Tryed of {index}")
