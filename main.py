@@ -15,4 +15,4 @@ async def main():
 
     await suggest.pollution()
 
-asyncio.run(main)
+asyncio.run(main())
