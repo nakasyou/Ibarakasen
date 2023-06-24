@@ -13,6 +13,7 @@ args = parser.parse_args()
 
 
 async def main():
+    global index
     # System
     suggest = Suggest(args.words)
 
@@ -35,4 +36,5 @@ async def main():
 try:
     asyncio.run(main())
 except KeyboardInterrupt:
-    print("end")
+    print("Ended")
+    print(f"Tryed of {index}")
