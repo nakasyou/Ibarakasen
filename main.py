@@ -20,21 +20,19 @@ async def main():
     def end():
         print("Ended")
         print(f"Tryed of {index}")
-    try:
-        while True:
-            await suggest.pollution()
-            index += 1
+    while True:
+        await suggest.pollution()
+        index += 1
 
-            ratio = math.floor(index/args.number*10000)/100 if args.number!=0 else "--"
+        ratio = math.floor(index/args.number*10000)/100 if args.number!=0 else "--"
 
-            print(f"{index} / {args.number} ({ratio}%)")
-            if args.number != 0:
-                # 有限
-                if index == args.number:
-                    break
-        end()
-    except KeyboardInterrupt:
-        end()
+        print(f"{index} / {args.number} ({ratio}%)")
+        if args.number != 0:
+            # 有限
+            if index == args.number:
+                break
 
-
-asyncio.run(main())
+try:
+    asyncio.run(main())
+except KeyboardInterrupt:
+    print("end")
