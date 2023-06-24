@@ -19,6 +19,7 @@ async def main():
     if args.number != 0:
         counter = tqdm(range(args.number))
     
+    index = 0
     while True:
         print(index)
         await suggest.pollution()
