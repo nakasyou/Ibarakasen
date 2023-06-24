@@ -1,6 +1,7 @@
 from core.suggest import Suggest
 import argparse
 import asyncio
+import math
 
 # ArgParse
 parser = argparse.ArgumentParser(description='サジェスト汚染ツール')
@@ -15,12 +16,14 @@ async def main():
     # System
     suggest = Suggest(args.words)
 
-    
     index = 0
     while True:
-        print(index)
         await suggest.pollution()
         index += 1
+
+        ratio = math.floor(index/args.number*10000)/100 if args.number!=0 else "--"
+
+        print(f"{index} / {args.number} ({ratio})")
         if args.number != 0:
             # 有限
             if index == args.number:
