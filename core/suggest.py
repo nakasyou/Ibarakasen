@@ -1,4 +1,4 @@
-from ..engines import bing, google
+from engines import bing, google
 
 class Suggest:
     def __init__(self, keywords):
