@@ -1,5 +1,6 @@
 from core.suggest import Suggest
 import argparse
+import asyncio
 
 # ArgParse
 parser = argparse.ArgumentParser(description='サジェスト汚染ツール')
@@ -8,7 +9,10 @@ parser.add_argument("words", nargs="*", type=str, help="ターゲットのワー
 
 args = parser.parse_args()
 
-# System
-suggest = Suggest(args.words)
+async def main():
+    # System
+    suggest = Suggest(args.words)
 
-suggest.pollution()
+    await suggest.pollution()
+
+asyncio.run(main)
