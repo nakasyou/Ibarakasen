@@ -1,4 +1,5 @@
 from engines import bing, google
+import asyncio
 
 class Suggest:
     def __init__(self, keywords):
